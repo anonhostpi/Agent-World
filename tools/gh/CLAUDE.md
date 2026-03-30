@@ -58,8 +58,24 @@ gh repo view cli/cli --json description,stargazerCount,topics
 ```
 
 #### 2. Code Discovery
+
+The primary use case: you've already exhausted local options and need to find a solution out in the world. Start broad — don't limit to your target language. Algorithms and patterns port. A working implementation in any language is often enough to adapt.
+
 ```bash
-# Search with noise reduction — NOT path: excludes directories (Code Search v2 syntax)
+# Find ANY implementation of what you need — language doesn't matter yet
+gh search code "topological sort"
+
+# Narrow to languages with strong ecosystem for this domain
+gh search code "topological sort" --language python
+gh search code "topological sort" --language rust
+
+# Only after you've found the approach, look for one in your target language
+gh search code "topological sort" --language typescript
+```
+
+Noise reduction and scoping:
+```bash
+# Exclude vendor/dependency directories (Code Search v2 query syntax)
 gh search code "serve NOT path:vendor NOT path:node_modules" --repo anthropics/sdk
 
 # Filter by filename (--filename is an inclusion flag; no exclusion flags exist)
@@ -67,19 +83,6 @@ gh search code "import" --filename "mod.ts" --language typescript
 
 # Scope to an org
 gh search code "pattern" --owner anthropics
-```
-
-**Cross-language solution discovery**: When you can't find a solution in your target language, search without `--language` or search in a language where the problem is commonly solved. Algorithms and patterns port across languages — finding a working implementation in any language is often enough to adapt it.
-```bash
-# Can't find a solution in TypeScript? Try without language filter
-gh search code "topological sort" --filename "*.ts"
-
-# Still nothing? Search across all languages — find ANY working implementation
-gh search code "topological sort"
-
-# Or target a language known for strong implementations in this domain
-gh search code "topological sort" --language python
-gh search code "topological sort" --language rust
 ```
 
 #### 3. Issue/PR Discovery
