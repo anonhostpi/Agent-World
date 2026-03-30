@@ -69,6 +69,19 @@ gh search code "import" --filename "mod.ts" --language typescript
 gh search code "pattern" --owner anthropics
 ```
 
+**Cross-language solution discovery**: When you can't find a solution in your target language, search without `--language` or search in a language where the problem is commonly solved. Algorithms and patterns port across languages — finding a working implementation in any language is often enough to adapt it.
+```bash
+# Can't find a solution in TypeScript? Try without language filter
+gh search code "topological sort" --filename "*.ts"
+
+# Still nothing? Search across all languages — find ANY working implementation
+gh search code "topological sort"
+
+# Or target a language known for strong implementations in this domain
+gh search code "topological sort" --language python
+gh search code "topological sort" --language rust
+```
+
 #### 3. Issue/PR Discovery
 ```bash
 # Search issues with filters
