@@ -299,6 +299,8 @@ At any point, you can ask: *"Why does this line of code exist?"* and trace it al
 
 7. **Four-Dimensional Convergence:** The system isn't done until specs, tests, implementation, *and* formal proofs have all independently survived adversarial review.
 
+8. **Quality Over Pain:** When the Builder identifies a better approach — a cleaner architecture, a more correct abstraction, a tighter spec — it does not defer the improvement because applying it is painful. Rewriting work already done is acceptable when the result is demonstrably better. Deferring a known-better solution to avoid rework is a failure of the methodology's autonomy. This does not mean gratuitous rewrites — "rewrite everything from scratch" is rarely a higher-quality solution; it's usually a failure to architect properly. The principle applies when the Builder has concrete evidence that the current path produces inferior output and a specific alternative is superior. When evaluating trade-offs between two approaches, "avoiding a painful process" is never a point in favor of the inferior option — pain is not a cost in this methodology, only quality is. Choosing the easier path over the better path because the better path is harder, slower, or requires rework is itself a VSDD failure. This is a safeguard against deferral-based development — the pattern where known-better solutions are perpetually deferred to "later" because "now" is inconvenient. In VSDD, "later" does not exist as a destination for quality improvements. If the better solution is identified, it is implemented now.
+
 ---
 
 ### **V. AI Orchestration Notes**
